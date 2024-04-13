@@ -14,7 +14,7 @@
 					ЦАРЮК АРТЁМ
 				</div>
 				<div class="px-[30rem] text-[32rem] text-white">
-					Старший разработчик
+					Java/Kotlin разработчик
 				</div>
 				<div class="absolute bottom-0 left-0 p-[30rem]">
 					{@html PlusIcon}
