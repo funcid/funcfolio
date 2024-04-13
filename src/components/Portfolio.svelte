@@ -1,6 +1,6 @@
 <script>
     import DotsIcon from '$lib/images/icon/black_dots.svg?raw'
-    import VisualDriverImage from '$lib/images/project/visual_driver.png'
+    import VisualDriverImage from '$lib/images/project/visual_driver.jpg'
 </script>
 
 <div class="flex flex-col gap-[100rem]">
