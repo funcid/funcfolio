@@ -1,5 +1,6 @@
 <script>
     import DotsIcon from '$lib/images/icon/black_dots.svg?raw'
+    import VisualDriverImage from '$lib/images/project/visual_driver.png'
 </script>
 
 <div class="flex flex-col gap-[100rem]">
@@ -15,8 +16,8 @@
         </div>
     </div>
     <div class="max-w-[1720rem] flex flex-wrap gap-[80rem]">
-        <div>
-
+        <div class="w-[820rem] h-[519rem] rounded-[7rem] overflow-hidden">
+            <img class="w-full" src={VisualDriverImage} alt="Visual Driver"/>
         </div>
     </div>
 </div>
