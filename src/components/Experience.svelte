@@ -1,8 +1,8 @@
 <script>
-    import DotsIcon from '$lib/images/black_dots.svg?raw'
-    import MtsImage from '$lib/images/mts.png'
-    import SberImage from '$lib/images/sber.png'
-    import CristalixImage from '$lib/images/cristalix.png'
+    import DotsIcon from '$lib/images/icon/black_dots.svg?raw'
+    import MtsImage from '$lib/images/job/mts.png'
+    import SberImage from '$lib/images/job/sber.png'
+    import CristalixImage from '$lib/images/job/cristalix.png'
     import Job from './Job.svelte';
 </script>
 

@@ -1,7 +1,7 @@
 <script>
-    import PlusIcon from '$lib/images/plus.svg?raw'
-	import DotsIcon from '$lib/images/white_dots.svg?raw'
-	import SquareIcon from '$lib/images/square.svg?raw'
+    import PlusIcon from '$lib/images/icon/plus.svg?raw'
+	import DotsIcon from '$lib/images/icon/white_dots.svg?raw'
+	import SquareIcon from '$lib/images/icon/square.svg?raw'
     import SocialMedia from './SocialMedia.svelte';
 </script>
 
@@ -32,6 +32,7 @@
         <div class="text-[32rem] text-black flex gap-[20rem] flex-wrap">
             <SocialMedia media="VK" link="https://vk.com/funcid" color="--blue"/>
             <SocialMedia media="TELEGRAM" link="https://t.me/funcid" color="--skyblue"/>
+            <SocialMedia media="HH" link="https://hh.ru/resume/f7b8fed6ff08fd1f5e0039ed1f364a55334761" color="--coral"/>
             <SocialMedia media="GITHUB" link="https://github.com/funcid" color="--green"/>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LinkIcon from '$lib/images/link.svg?raw'
+	import LinkIcon from '$lib/images/icon/link.svg?raw'
 
 	export let color: string;
     export let media: string;
