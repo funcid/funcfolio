@@ -29,7 +29,7 @@
         <div class="w-[656rem] text-[32rem]/[150%]">
             Обладаю обширным опытом в создании Java-сервисов и обработке данных с целью аналитического использования.
         </div>
-        <div class="text-[32rem] text-black flex gap-[20rem]">
+        <div class="text-[32rem] text-black flex gap-[20rem] flex-wrap">
             <SocialMedia media="VK" link="https://vk.com/funcid" color="--blue"/>
             <SocialMedia media="TELEGRAM" link="https://t.me/funcid" color="--skyblue"/>
             <SocialMedia media="GITHUB" link="https://github.com/funcid" color="--green"/>
