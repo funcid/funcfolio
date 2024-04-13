@@ -2,10 +2,8 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {
-      backgroundImage: {
-        'avatar': "url('../lib/images/avatar.jpg')",
-      }
+    fontFamily: {
+      'oddval': ['Oddval']
     }
   },
   plugins: []

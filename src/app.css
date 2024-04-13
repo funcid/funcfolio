@@ -10,3 +10,8 @@ html {
   font-size: var(--scale);
   line-height: 1;
 }
+
+.bg-avatar {
+  background-image: url('./lib/images/avatar.png');
+}
+
