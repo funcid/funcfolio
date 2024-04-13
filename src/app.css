@@ -4,6 +4,13 @@
 
 :root {
   --scale: 0.05vw;
+  --skyblue: #ADF0FF;
+  --blue: #A3D1FF;
+  --fluefrost: #B8BFFF;
+  --yellow: #FFD4AD;
+  --purpur: #DFABFF;
+  --pink: #FFB2DC;
+  --coral: #FFBEBE;
 }
 
 html {
@@ -12,6 +19,5 @@ html {
 }
 
 .bg-avatar {
-  background-image: url('./lib/images/avatar.png');
+  background-image: url('./lib/images/avatar.jpg');
 }
-
