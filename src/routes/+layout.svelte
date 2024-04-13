@@ -9,8 +9,8 @@
 <div class="p-[100rem] text-[32rem] flex">
     <div class="flex gap-[80rem]">
         <div class="bg-avatar w-[820rem] h-[514rem] bg-center bg-cover rounded-[7rem] relative overflow-hidden">
-			<div class="absolute bottom-0 left-0 backdrop-blur-[100rem] bg-black/10 w-full h-[234rem]">
-				<div class="p-[30rem] text-[56rem] text-white font-bold">
+			<div class="absolute bottom-0 left-0 backdrop-blur-[100rem] bg-black/10 w-full h-[234rem] font-oddval">
+				<div class="p-[30rem] text-[56rem] text-white font-bold ">
 					ЦАРЮК АРТЁМ
 				</div>
 				<div class="px-[30rem] text-[32rem] text-white">
