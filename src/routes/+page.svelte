@@ -18,13 +18,5 @@
 		font-family: "Oddval";
 		src: url("/public/fonts/Oddval-SemiBold.ttf") format("truetype");
 		font-style: normal;
-		font-weight: 600;
-	}
-
-	@font-face {
-		font-family: "Oddval";
-		src: url("/public/fonts/Oddval-SemiBoldItalic.ttf") format("truetype");
-		font-style: italic;
-		font-weight: 600;
 	}
 </style>
