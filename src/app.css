@@ -4,9 +4,20 @@
 
 :root {
   --scale: 0.05vw;
+  --skyblue: #ADF0FF;
+  --blue: #A3D1FF;
+  --fluefrost: #B8BFFF;
+  --yellow: #FFD4AD;
+  --purpur: #DFABFF;
+  --pink: #FFB2DC;
+  --coral: #FFBEBE;
 }
 
 html {
   font-size: var(--scale);
   line-height: 1;
+}
+
+.bg-avatar {
+  background-image: url('./lib/images/avatar.jpg');
 }
