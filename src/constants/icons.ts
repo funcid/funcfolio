@@ -9,7 +9,8 @@ export const icons = [
     "black_aim",
     "black_angle",
     "black_frog",
-    "black_bubble"
+    "black_bubble",
+    "black_sadness"
 ].map(name => `<img src="src/lib/images/icon/${name}.svg?raw">`)
 
 export function getRandomIcon() {

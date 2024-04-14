@@ -24,6 +24,7 @@
             icon={MtsImage} 
             position="Старший разработчик Java" 
             date="Москва, c 2023 г."
+            actual={true}
         />
         <Job 
             jobName="СБЕР" 
