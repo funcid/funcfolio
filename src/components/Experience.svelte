@@ -7,7 +7,7 @@
 </script>
 
 <div class="flex flex-col gap-[100rem]">
-    <div class="flex">
+    <div class="flex flex-col lg:flex-row">
         <p class="min-w-[900rem] text-[96rem] font-bold font-oddval">
             ОПЫТ
         </p>

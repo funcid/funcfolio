@@ -7,7 +7,7 @@
 </script>
 
 <div class="w-full flex justify-center p-[100rem]">
-	<div class="w-full max-w-[1720rem] text-[32rem] flex flex-col gap-[200rem]">
+	<div class="w-full max-w-[1720rem] text-[32rem] flex flex-col gap-[200rem] ra">
 		<Introduction />
 		<Experience />
 		<Portfolio />

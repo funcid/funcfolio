@@ -19,6 +19,12 @@ html {
   line-height: 1;
 }
 
+@media only screen and (max-width: 1024px) {
+  :root {
+    --scale: 0.0935vw;
+  }
+}
+
 .bg-avatar {
   background-image: url('./lib/images/avatar.png');
 }
