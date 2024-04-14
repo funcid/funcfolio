@@ -11,7 +11,7 @@
         <p class="min-w-[900rem] text-[96rem] font-bold font-oddval">
             ОПЫТ
         </p>
-        <p class="text-[32rem] font-sans w-full">
+        <p class="text-[32rem] font-onest w-full">
             Должности
         </p>
         <div>

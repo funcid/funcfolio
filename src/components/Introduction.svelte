@@ -11,7 +11,7 @@
             <div class="text-[56rem] text-white font-bold font-oddval">
                 АРТЁМ ЦАРЮК
             </div>
-            <div class="text-[32rem] text-white font-sans">
+            <div class="text-[32rem] text-white font-onest">
                 Старший разработчик
             </div>
             <div class="absolute bottom-0 left-0 p-[30rem]">
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="w-[820rem] h-[119rem] flex flex-col gap-[80rem]">
-        <div class="w-[656rem] text-[32rem]/[150%]">
+        <div class="w-[656rem] text-[32rem]/[150%] font-onest">
             Увлекаюсь финтехом, анализом данных, криптографией, веб-технологиями и машинным обучением.
         </div>
         <div class="text-[32rem] text-black flex gap-[20rem] flex-wrap">

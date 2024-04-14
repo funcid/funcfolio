@@ -9,7 +9,7 @@
     <img src={icon} alt={jobName}/>
     <div class="flex flex-col h-full justify-between">
         <p class="text-[56rem] font-bold font-oddval">{jobName}</p>
-        <p class="font-sans text-[24rem]/[128%]">
+        <p class="font-onest text-[24rem]/[128%]">
             {date}<br/>
             {position}
         </p>
