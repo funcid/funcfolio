@@ -11,7 +11,7 @@
     export let url: string;
 </script>
 
-<button on:click={() => window.open(url)} class="text-left w-full rounded-[7rem] overflow-hidden" style="height: {height}rem; {additionalStyle}">
+<button on:click={() => window.open(url)} class="project-item text-left w-full rounded-[7rem] overflow-hidden" style="height: {height}rem; {additionalStyle}">
     <img
         src={background}
         class="w-full object-cover object-center"

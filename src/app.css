@@ -25,6 +25,32 @@ html {
   }
 }
 
+.project-item {
+  transition: 0.1s cubic-bezier(1, -0.27, 0, 1.58);
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.project-item:hover {
+  box-shadow: 0px 0px 0px 22px;
+}
+
+.project-item:active {
+  box-shadow: 0px 0px 0px 28px;
+}
+
+.link-item {
+  transition: 0.1s cubic-bezier(1, -0.27, 0, 1.58);
+  box-shadow: 0px 0px 0px 0px var(--p-color);
+}
+
+.link-item:hover {
+  box-shadow: 0px 0px 0px 4px var(--p-color);
+}
+
+.link-item:active {
+  box-shadow: 0px 0px 0px 8px var(--p-color);
+}
+
 .bg-avatar {
   background-image: url('./lib/images/avatar.png');
 }
