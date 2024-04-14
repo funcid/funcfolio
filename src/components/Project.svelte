@@ -7,20 +7,22 @@
     export let description: string;
     export let color: string;
     export let blockSize: number;
+    export let height: number = 519;
 </script>
 
-<div class="w-[820rem] h-[519rem] rounded-[7rem] overflow-hidden">
+<div class="w-[820rem] rounded-[7rem] overflow-hidden" style="height: {height}rem">
     <img
         src={background}
-        class="h-[calc(100%-{blockSize}rem)] w-full object-cover object-center"
+        class="w-full object-cover object-center"
         alt="{background} logo"
+        style="height: calc(100% - {blockSize}rem)"
     />
 
-    <div class="w-full h-[{blockSize}rem] bg-[{color}]">
+    <div class="w-full" style="background: var({color}); height: {blockSize}rem">
         <div class="p-[30rem] h-full flex justify-between gap-[20rem]">
             <div class="w-[718rem] flex flex-col justify-between">
                 <p class="text-[72rem] font-bold font-oddval">
-                    {title}
+                    {@html title}
                 </p>
                 <p class="text-[32rem] font-onest">
                     {description}
