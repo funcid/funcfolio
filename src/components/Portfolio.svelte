@@ -7,6 +7,16 @@
     import WebCrawlerImage from "$lib/images/project/web_crawler.jpg";
     import FtpDesktopUtilImage from "$lib/images/project/ftp_desktop_util.jpg";
     import StableDiffusionImage from "$lib/images/project/stable_diffusion.jpg";
+
+    import TakiwadaiImage from "$lib/images/project/takiwadai.jpg";
+    import Log4jBombImage from "$lib/images/project/log4j_bomb.jpg";
+    import ParametricGraphicsImage from "$lib/images/project/parametric_graphics.jpg";
+    import MuseumImage from "$lib/images/project/museum.jpg";
+    import PeasCLIImage from "$lib/images/project/peas_cli.jpg";
+    import LeetcodeTrainingImage from "$lib/images/project/leetcode_training.jpg";
+    import WebPostParserImage from "$lib/images/project/web_post_parser.jpg";
+    import S3VultrDownloaderImage from "$lib/images/project/s3_vultr_downloader.jpg";
+    import WebK8SImage from "$lib/images/project/web_k8s.jpg";
 </script>
 
 <div class="flex flex-col gap-[100rem]">
@@ -64,6 +74,84 @@
             color="--green"
             blockSize={444}
             height={649}
+        />
+        <Project
+            background={TakiwadaiImage}
+            title={"TAKIWADAI"}
+            description="Платформа для соревнований в решении олимп. задач"
+            color="--blue"
+            blockSize={208}
+            height={619}
+            width={1720}
+        />
+        <div class="flex flex-wrap gap-[80rem]">
+            <div class="flex flex-col gap-[80rem]">
+                <Project
+                    background={Log4jBombImage}
+                    title={"LOG4J<br/>EXPLOIT<br/>FORK<br/>BOMB"}
+                    description="Proof of Concept: CVE-2021-44228 + fork bomb"
+                    color="--yellow"
+                    blockSize={403}
+                    height={608}
+                />
+                <Project
+                    background={MuseumImage}
+                    title={"MUSEUM"}
+                    description="Игра, экономический симулятор палеонтолога"
+                    color="--purpur"
+                    blockSize={249}
+                    height={454}
+                />
+            </div>
+            <Project
+                background={ParametricGraphicsImage}
+                title={"PARAMETRIC<br/>GRAPHICS<br/>VISUALIZER"}
+                description="Desktop приложение для построения параметрических функций"
+                color="--skyblue"
+                blockSize={338}
+                height={1142}
+            />
+        </div>
+        <Project
+            background={PeasCLIImage}
+            title={"PEAS<br/>CLI"}
+            description="Децентрализованный файлообмен (курсовая работа 2 курс)"
+            color="--pink"
+            blockSize={273}
+            height={737}
+            width={1720}
+        />
+        <Project
+            background={LeetcodeTrainingImage}
+            title={"LEETCODE<br/>TRAINING"}
+            description="Решаю LeetCode проблемы"
+            color="--bluefrost"
+            blockSize={273}
+            height={543}
+        />
+        <Project
+            background={WebPostParserImage}
+            title={"WEB<br/>POST<br/>PARSER"}
+            description="Посты из Pikabu/JoyReactor в XML/JSON"
+            color="--green"
+            blockSize={338}
+            height={543}
+        />
+        <Project
+            background={S3VultrDownloaderImage}
+            title={"S3<br/>VULTR<br/>DOWNLOADER"}
+            description="Скачать корзину из Vultr"
+            color="--yellow"
+            blockSize={338}
+            height={543}
+        />
+        <Project
+            background={WebK8SImage}
+            title={"WEB-K8S"}
+            description="Утилита для администрирования Kubernetes"
+            color="--blue"
+            blockSize={208}
+            height={543}
         />
     </div>
 </div>

@@ -8,9 +8,10 @@
     export let color: string;
     export let blockSize: number;
     export let height: number = 519;
+    export let width: number = 820;
 </script>
 
-<div class="w-[820rem] rounded-[7rem] overflow-hidden" style="height: {height}rem">
+<div class="w-[820rem] rounded-[7rem] overflow-hidden" style="height: {height}rem; width: {width}rem">
     <img
         src={background}
         class="w-full object-cover object-center"
@@ -20,11 +21,11 @@
 
     <div class="w-full" style="background: var({color}); height: {blockSize}rem">
         <div class="p-[30rem] h-full flex justify-between gap-[20rem]">
-            <div class="w-[718rem] flex flex-col justify-between">
+            <div class="w-full flex flex-col justify-between">
                 <p class="text-[72rem] font-bold font-oddval">
                     {@html title}
                 </p>
-                <p class="text-[32rem] font-onest">
+                <p class="w-full text-[32rem] font-onest">
                     {description}
                 </p>
             </div>
