@@ -40,15 +40,15 @@ html {
 
 .link-item {
   transition: 0.1s cubic-bezier(1, -0.27, 0, 1.58);
-  box-shadow: 0px 0px 0px 0px var(--p-color);
+  box-shadow: 0px 0px 0px 0px;
 }
 
 .link-item:hover {
-  box-shadow: 0px 0px 0px 4px var(--p-color);
+  box-shadow: 0px 0px 0px 4px;
 }
 
 .link-item:active {
-  box-shadow: 0px 0px 0px 8px var(--p-color);
+  box-shadow: 0px 0px 0px 8px;
 }
 
 .bg-avatar {

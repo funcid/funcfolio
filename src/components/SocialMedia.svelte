@@ -6,6 +6,6 @@
     export let link: string;
 </script>
 
-<button on:click={() => window.open(link)} class="link-item text-[32rem] text-black h-[83rem] flex items-center justify-center gap-[50rem] px-[30rem] rounded-[7rem]" style="background-color: var({ color })">
-    {media} {@html LinkIcon} 
+<button on:click={() => window.open(link)} class="link-item text-[32rem] text-black h-[83rem] flex items-center justify-center gap-[50rem] px-[30rem] rounded-[7rem]" style="background-color: var({ color }); color: var({color})">
+    <p style="color: black">{media}</p> {@html LinkIcon}
 </button>

@@ -11,7 +11,7 @@
     export let url: string;
 </script>
 
-<button on:click={() => window.open(url)} class="project-item text-left w-full rounded-[7rem] overflow-hidden" style="height: {height}rem; {additionalStyle}">
+<button on:click={() => window.open(url)} class="project-item text-left w-full rounded-[7rem] overflow-hidden" style="height: {height}rem; {additionalStyle}; color: var({color})">
     <img
         src={background}
         class="w-full object-cover object-center"
@@ -19,7 +19,7 @@
         style="height: calc(100% - {blockSize}rem)"
     />
 
-    <div class="w-full" style="background: var({color}); height: {blockSize}rem">
+    <div class="w-full" style="color: black; background: var({color}); height: {blockSize}rem">
         <div class="p-[30rem] h-full flex justify-between gap-[20rem]">
             <div class="w-full flex flex-col justify-between">
                 <p class="text-[72rem] font-bold font-oddval">
