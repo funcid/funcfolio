@@ -7,18 +7,18 @@
 </script>
 
 <div class="flex flex-col gap-[100rem]">
-    <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-col lg:flex-row max-w-[830rem] lg:max-w-[1720rem]">
         <p class="min-w-[900rem] text-[96rem] font-bold font-oddval">
             ОПЫТ
         </p>
-        <p class="text-[32rem] font-onest w-full">
-            Должности
-        </p>
-        <div>
+        <div class="flex w-full">
+            <p class="text-[32rem] font-onest w-full">
+                Должности
+            </p>
             {@html DotsIcon}
         </div>
     </div>
-    <div class="max-w-[1720rem] flex flex-wrap gap-x-[80rem] gap-y-[60rem]">
+    <div class="max-w-[1720rem] lg:max-w-[1720rem] flex flex-wrap gap-x-[80rem] gap-y-[60rem]">
         <Job 
             jobName="МТС БАНК" 
             icon={MtsImage} 

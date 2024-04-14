@@ -9,7 +9,7 @@
     export let actual: boolean = false;
 </script>
 
-<div class="min-w-[820rem] h-[160rem] flex gap-[30rem]">
+<div class="lg:min-w-[820rem] min-w-[830rem] h-[160rem] flex gap-[30rem]">
     <img src={icon} alt={jobName}/>
     <div class="w-full flex justify-between">
         <div class="flex flex-col h-full justify-between">
@@ -19,12 +19,10 @@
                 {position}
             </p>
         </div>
-        <div>
-            {#if actual}
-                {@html PlusIcon}
-            {:else}
-                {@html AimIcon}
-            {/if}
-        </div>
+        {#if actual}
+            {@html PlusIcon}
+        {:else}
+            {@html AimIcon}
+        {/if}
     </div>
 </div>

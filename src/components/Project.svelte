@@ -10,7 +10,7 @@
     export let width: number = 820;
 </script>
 
-<div class="w-[820rem] rounded-[7rem] overflow-hidden" style="height: {height}rem; width: {width}rem">
+<div class="w-full lg:w-[820rem] rounded-[7rem] overflow-hidden" style="height: {height}rem; width: {width}rem">
     <img
         src={background}
         class="w-full object-cover object-center"

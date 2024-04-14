@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="w-[830rem] lg:w-[820rem] h-[119rem] flex flex-col gap-[80rem]">
+    <div class="w-[830rem] lg:w-[820rem] h-[514rem] lg:h-[119rem] flex flex-col gap-[80rem]">
         <div class="w-[656rem] text-[32rem]/[150%] font-onest">
             Увлекаюсь финтехом, анализом данных, криптографией, веб-технологиями и машинным обучением.
         </div>
