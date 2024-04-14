@@ -24,6 +24,7 @@ export default [
         description: "Движок для Minecraft, общий набор визуальных решений",
         color: "--blue",
         blockSize: 314,
+        url: "https://github.com/funcid/visual-driver"
     },
     {
         background: MeteoServiceImage,
@@ -31,6 +32,7 @@ export default [
         description: "Своя Я.Погода, от Arduino UNO и Spring Boot до Android",
         color: "--yellow",
         blockSize: 314,
+        url: "https://github.com/funcid/meteo-service"
     },
     {
         background: DataScienceImage,
@@ -38,6 +40,7 @@ export default [
         description: "Изучаю теор. вер., мат. стат. и ML",
         color: "--skyblue",
         blockSize: 273,
+        url: "https://github.com/funcid/data-science"
     },
     {
         background: WebCrawlerImage,
@@ -45,6 +48,7 @@ export default [
         description: "Сканнер интернета, сохраняет найденные сайты + поиск",
         color: "--bluefrost",
         blockSize: 314,
+        url: "https://github.com/funcid/web-crawler"
     },
     {
         background: FtpDesktopUtilImage,
@@ -53,6 +57,7 @@ export default [
         color: "--yellow",
         blockSize: 311,
         height: 649,
+        url: "https://github.com/funcid/ftp-desktop-util"
     },
     {
         background: StableDiffusionImage,
@@ -61,6 +66,7 @@ export default [
         color: "--green",
         blockSize: 444,
         height: 649,
+        url: "https://github.com/funcid/stable-diffusion-inpaint-util"
     },
     {
         background: TakiwadaiImage,
@@ -70,7 +76,8 @@ export default [
         blockSize: 208,
         height: 619,
         width: 1720,
-        additionalStyle: doubleCol
+        additionalStyle: doubleCol,
+        url: "https://github.com/funcid/takiwadai"
     },
     {
         background: Log4jBombImage,
@@ -79,6 +86,7 @@ export default [
         color: "--yellow",
         blockSize: 403,
         height: 608,
+        url: "https://github.com/funcid/log4j-exploit-fork-bomb"
     },
     {
         background: ParametricGraphicsImage,
@@ -87,7 +95,8 @@ export default [
         color: "--skyblue",
         blockSize: 338,
         height: 1142,
-        additionalStyle: doubleRow
+        additionalStyle: doubleRow,
+        url: "https://github.com/funcid/parametric-graphics-visualizer"
     },
     {
         background: MuseumImage,
@@ -96,6 +105,7 @@ export default [
         color: "--purpur",
         blockSize: 249,
         height: 454,
+        url: "https://github.com/cristalix-developers/museum"
     },
 
     {
@@ -106,7 +116,8 @@ export default [
         blockSize: 273,
         height: 737,
         width: 1720,
-        additionalStyle: doubleCol
+        additionalStyle: doubleCol,
+        url: "https://github.com/funcid/peas-cli"
     },
     {
         background: LeetcodeTrainingImage,
@@ -115,6 +126,7 @@ export default [
         color: "--bluefrost",
         blockSize: 273,
         height: 543,
+        url: "https://github.com/funcid/leetcode-training"
     },
     {
         background: WebPostParserImage,
@@ -123,6 +135,7 @@ export default [
         color: "--green",
         blockSize: 338,
         height: 543,
+        url: "https://github.com/funcid/web-post-parser"
     },
     {
         background: S3VultrDownloaderImage,
@@ -131,6 +144,7 @@ export default [
         color: "--yellow",
         blockSize: 338,
         height: 543,
+        url: "https://github.com/funcid/s3-vultr-downloader"
     },
     {
         background: WebK8SImage,
@@ -139,5 +153,6 @@ export default [
         color: "--blue",
         blockSize: 208,
         height: 543,
+        url: "https://github.com/funcid/web-k8s"
     }
 ]

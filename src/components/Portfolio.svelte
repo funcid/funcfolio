@@ -25,6 +25,7 @@
                 blockSize={elem.blockSize}
                 height={elem.height}
                 additionalStyle={elem.additionalStyle}
+                url={elem.url}
             />
         {/each}
     </div>
