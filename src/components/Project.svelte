@@ -1,8 +1,6 @@
 <script lang="ts">
     import { getRandomIcon } from '../constants/icons'
 
-    console.log(getRandomIcon())
-
     export let background: string;
     export let title: string;
     export let description: string;
@@ -31,8 +29,8 @@
                 </p>
             </div>
             <div class="w-[22rem] h-full flex flex-col justify-between">
-                <img src={getRandomIcon()} alt="icon"/>
-                <img src={getRandomIcon()} alt="icon"/>
+                {@html getRandomIcon()}
+                {@html getRandomIcon()}
             </div>
         </div>
     </div>
