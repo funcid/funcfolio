@@ -7,10 +7,10 @@
     export let color: string;
     export let blockSize: number;
     export let height: number = 519;
-    export let width: number = 820;
+    export let additionalStyle: string = '';
 </script>
 
-<div class="w-full lg:w-[820rem] rounded-[7rem] overflow-hidden" style="height: {height}rem; width: {width}rem">
+<div class="w-full rounded-[7rem] overflow-hidden" style="height: {height}rem; {additionalStyle}">
     <img
         src={background}
         class="w-full object-cover object-center"
