@@ -31,8 +31,8 @@
                 </p>
             </div>
             <div class="w-[22rem] h-full flex flex-col justify-between">
-                {@html getRandomIcon()}
-                {@html getRandomIcon()}
+                <img src={getRandomIcon()} alt="icon"/>
+                <img src={getRandomIcon()} alt="icon"/>
             </div>
         </div>
     </div>
