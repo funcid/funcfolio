@@ -26,7 +26,7 @@ html {
 }
 
 .project-item {
-  transition: 0.1s cubic-bezier(1, -0.27, 0, 1.58);
+  transition: 0.1s cubic-bezier(1,-.27,0,1.58);
   box-shadow: 0px 0px 0px 0px;
 }
 
@@ -39,7 +39,7 @@ html {
 }
 
 .link-item {
-  transition: 0.1s cubic-bezier(1, -0.27, 0, 1.58);
+  transition: 0.1s cubic-bezier(1,-.27,0,1.58);
   box-shadow: 0px 0px 0px 0px;
 }
 
