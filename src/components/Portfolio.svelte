@@ -1,7 +1,7 @@
 <script>
     import DotsIcon from "$lib/images/icon/black_dots.svg?raw";
     import Project from "./Project.svelte";
-    import Projects from "../constants/constants"
+    import Projects from "../constants/projects"
 </script>
 
 <div class="flex flex-col gap-[100rem]">

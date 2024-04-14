@@ -1,6 +1,7 @@
 <script lang="ts">
-    import SquareIcon from '$lib/images/icon/black_square.svg?raw'
-    import BracketsIcon from '$lib/images/icon/black_brackets.svg?raw'
+    import { getRandomIcon } from '../constants/icons'
+
+    console.log(getRandomIcon())
 
     export let background: string;
     export let title: string;
@@ -30,8 +31,8 @@
                 </p>
             </div>
             <div class="w-[22rem] h-full flex flex-col justify-between">
-                {@html SquareIcon}
-                {@html BracketsIcon}
+                {@html getRandomIcon()}
+                {@html getRandomIcon()}
             </div>
         </div>
     </div>
