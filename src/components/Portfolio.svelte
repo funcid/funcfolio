@@ -16,8 +16,11 @@
         </div>
     </div>
     <div class="max-w-[1720rem] flex flex-wrap gap-[80rem]">
-        <div class="w-[820rem] h-[519rem] rounded-[7rem] overflow-hidden">
-            <img class="w-full" src={VisualDriverImage} alt="Visual Driver"/>
+        <div class="w-[820rem] h-[519rem] rounded-[7rem] overflow-hidden relative">
+            <img class="w-full object-cover object-top scale-150" src={VisualDriverImage} alt="Visual Driver"/>
+            <div class="absolute bottom-0 w-full h-[314rem] bg-[--blue]">
+
+            </div>
         </div>
     </div>
 </div>
