@@ -22,7 +22,7 @@
         <Job 
             jobName="МТС БАНК" 
             icon={MtsImage} 
-            position="Старший разработчик Java" 
+            position="Главный разработчик" 
             date="Москва, c 2023 г."
             actual={true}
         />
