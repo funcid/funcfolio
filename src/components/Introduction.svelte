@@ -1,8 +1,30 @@
 <script>
     import PlusIcon from '$lib/images/icon/plus.svg?raw'
-	import DotsIcon from '$lib/images/icon/white_dots.svg?raw'
-	import SquareIcon from '$lib/images/icon/square.svg?raw'
+    import DotsIcon from '$lib/images/icon/white_dots.svg?raw'
+    import SquareIcon from '$lib/images/icon/square.svg?raw'
     import SocialMedia from './SocialMedia.svelte';
+
+    const calculateAge = (birthYear, birthMonth, birthDay) => {
+        const today = new Date();
+        let age = today.getFullYear() - birthYear;
+        const currentMonth = today.getMonth();
+        const currentDay = today.getDate();
+
+        if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+            age--;
+        }
+
+        return age;
+    };
+
+    const age = calculateAge(2003, 6, 18);
+
+    const ageWithWord = (age) => {
+        const ending = (age % 100 > 10 && age % 100 < 15) ? 'лет' :
+                       (age % 10 === 1) ? 'год' :
+                       (age % 10 > 1 && age % 10 < 5) ? 'года' : 'лет';
+        return `${age} ${ending}`;
+    };
 </script>
 
 <div class="flex flex-col lg:flex-row gap-[80rem]">
@@ -12,7 +34,7 @@
                 АРТЁМ ЦАРЮК
             </div>
             <div class="text-[32rem] text-white font-onest">
-                Старший разработчик
+                {ageWithWord(age)}
             </div>
             <div class="absolute bottom-0 left-0 p-[30rem]">
                 {@html PlusIcon}
