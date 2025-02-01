@@ -20,20 +20,6 @@
 
 	<!-- Верхняя часть -->
 	<div class="w-full min-h-[800rem] py-[60rem] lg:py-[100rem] bg-gradient-to-br from-[--skyblue]/30 via-white to-[--pink]/20 flex items-center justify-center relative overflow-hidden">
-		<!-- Декоративные элементы -->
-		<div class="absolute inset-0">
-			<!-- Анимированные градиенты -->
-			<div class="absolute inset-0 overflow-hidden">
-				<div class="absolute top-[5%] left-[5%] w-[500rem] lg:w-[700rem] h-[500rem] lg:h-[700rem] rounded-full bg-[--blue]/10 blur-[150rem] animate-pulse-slow" />
-				<div class="absolute bottom-[5%] right-[5%] w-[500rem] lg:w-[700rem] h-[500rem] lg:h-[700rem] rounded-full bg-[--purpur]/10 blur-[150rem] animate-pulse-slow delay-1000" />
-				<div class="absolute top-[40%] right-[20%] w-[300rem] lg:w-[400rem] h-[300rem] lg:h-[400rem] rounded-full bg-[--coral]/10 blur-[100rem] animate-pulse-slow delay-2000" />
-				<div class="absolute bottom-[30%] left-[25%] w-[300rem] lg:w-[400rem] h-[300rem] lg:h-[400rem] rounded-full bg-[--green]/10 blur-[100rem] animate-pulse-slow delay-3000" />
-			</div>
-			
-			<!-- Дополнительные декоративные элементы -->
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.8),transparent_70%)]" />
-		</div>
-		
 		<div class="w-full max-w-[1440rem] px-[20rem] lg:px-[80rem]">
 			<Introduction />
 		</div>

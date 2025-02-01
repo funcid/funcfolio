@@ -365,8 +365,8 @@
     <!-- Заголовок -->
     <div class="flex items-end justify-between">
         <div class="flex flex-col gap-[15rem]">
-            <h2 class="text-[96rem] lg:text-[72rem] font-bold font-oddval">ОТДЫХ</h2>
-            <p class="text-[42rem] lg:text-[24rem] font-onest opacity-70">Путешествия и впечатления</p>
+            <h2 class="text-[96rem] lg:text-[72rem] font-bold font-oddval">ПУТЕШЕСТВИЯ</h2>
+            <p class="text-[42rem] lg:text-[24rem] font-onest opacity-70">Впечатления и фотографии</p>
         </div>
     </div>
 

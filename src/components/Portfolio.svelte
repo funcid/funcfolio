@@ -95,7 +95,7 @@
     <a 
         href="https://hh.ru/resume/f7b8fed6ff08fd1f5e0039ed1f364a55334761" 
         target="_blank"
-        class="project-item block rounded-[45rem] lg:rounded-[30rem] overflow-hidden bg-gradient-to-r from-[#D6001C] to-[#E31C2D] p-[35rem] lg:p-[30rem]"
+        class="project-item block rounded-[45rem] lg:rounded-[30rem] overflow-hidden bg-[#D6001C] p-[35rem] lg:p-[30rem] hover:scale-105"
     >
         <div class="flex items-center gap-[25rem] lg:gap-[20rem]">
             <div class="w-[90rem] lg:w-[80rem] h-[90rem] lg:h-[80rem] rounded-[45rem] lg:rounded-[30rem] bg-white flex items-center justify-center">
@@ -103,14 +103,9 @@
             </div>
             <div class="flex flex-col gap-[15rem] lg:gap-[12rem]">
                 <h3 class="text-[48rem] lg:text-[28rem] font-bold font-oddval text-white">HeadHunter</h3>
-                <div class="flex flex-col gap-[8rem] lg:gap-[6rem]">
-                    <p class="text-[36rem] lg:text-[20rem] font-onest text-white/90">
-                        Резюме
-                    </p>
-                    <p class="text-[32rem] lg:text-[18rem] font-onest text-white/70">
-                        Опыт: {experience.totalExperience}
-                    </p>
-                </div>
+                <p class="text-[36rem] lg:text-[20rem] font-onest text-white/90">
+                    Резюме
+                </p>
             </div>
         </div>
     </a>
@@ -119,7 +114,7 @@
     <a 
         href="https://t.me/+UVCeAB1bCGowODBi"
         target="_blank"
-        class="project-item block rounded-[45rem] lg:rounded-[30rem] overflow-hidden bg-gradient-to-r from-[--purpur] to-[--pink] p-[35rem] lg:p-[30rem]"
+        class="project-item block rounded-[45rem] lg:rounded-[30rem] overflow-hidden bg-[--purpur] p-[35rem] lg:p-[30rem] hover:scale-105"
     >
         <div class="flex items-center gap-[25rem] lg:gap-[20rem]">
             <div class="w-[90rem] lg:w-[80rem] h-[90rem] lg:h-[80rem] rounded-[45rem] lg:rounded-[30rem] bg-white/10 flex items-center justify-center">
