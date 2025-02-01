@@ -12,6 +12,9 @@
   --pink: #FFB2DC;
   --coral: #FFBEBE;
   --green: #C7FFBE;
+  --radius: 7rem;
+  --shadow: 0 10rem 30rem rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 15rem 40rem rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -25,30 +28,20 @@ html {
   }
 }
 
-.project-item {
-  transition: 0.1s cubic-bezier(1,-.27,0,1.58);
-  box-shadow: 0rem 0rem 0rem 0rem;
+.interactive-element {
+  @apply rounded-[7rem] transition-all duration-300;
+  box-shadow: var(--shadow);
 }
 
-.project-item:hover {
-  box-shadow: 0rem 0rem 0rem 22rem;
+.interactive-element:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2rem);
 }
 
-.project-item:active {
-  box-shadow: 0rem 0rem 0rem 28rem;
-}
-
-.link-item {
-  transition: 0.1s cubic-bezier(1,-.27,0,1.58);
-  box-shadow: 0rem 0rem 0rem 0rem;
-}
-
-.link-item:hover {
-  box-shadow: 0rem 0rem 0rem 4rem;
-}
-
-.link-item:active {
-  box-shadow: 0rem 0rem 0rem 8rem;
+@media (hover: none) {
+  .interactive-element:hover {
+    transform: none;
+  }
 }
 
 .bg-avatar {

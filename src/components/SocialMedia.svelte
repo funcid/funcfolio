@@ -6,6 +6,55 @@
     export let link: string;
 </script>
 
-<button on:click={() => window.open(link)} class="link-item text-[32rem] text-black h-[83rem] flex items-center justify-center gap-[50rem] px-[30rem] rounded-[7rem]" style="background-color: var({ color }); color: var({color})">
-    <p style="color: black">{media}</p> {@html LinkIcon}
-</button>
+<a 
+    href={link}
+    target="_blank"
+    class="interactive-element flex items-center gap-[12rem] px-[25rem] h-[70rem] lg:h-[83rem] bg-white/70 backdrop-blur-md rounded-[20rem] relative overflow-hidden"
+>
+    <!-- Фоновый градиент -->
+    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+         style="background: linear-gradient(120deg, var({color}), var(--skyblue))" 
+    />
+    
+    <!-- Контент -->
+    <div class="relative flex items-center gap-[12rem] group-hover:text-white transition-colors duration-300">
+        <!-- Иконка соцсети -->
+        {#if media === "VK"}
+            <svg class="w-[24rem] h-[24rem]" viewBox="0 0 24 24" fill="none">
+                <path d="M2 12C2 6.48 6.48 2 12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12ZM11.08 15.96L16.08 12.2C16.42 11.94 16.42 11.46 16.08 11.2L11.08 7.44C10.68 7.14 10.1 7.42 10.1 7.9V15.5C10.1 15.98 10.68 16.26 11.08 15.96Z" fill="currentColor"/>
+            </svg>
+        {:else if media === "TELEGRAM"}
+            <svg class="w-[24rem] h-[24rem]" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.22 15.51 15.99C15.37 16.74 15.09 16.99 14.83 17.02C14.25 17.07 13.81 16.64 13.25 16.27C12.37 15.69 11.87 15.33 11.02 14.77C10.03 14.12 10.67 13.76 11.24 13.18C11.39 13.03 13.95 10.7 14 10.49C14.0069 10.4582 14.006 10.4252 13.9973 10.3938C13.9886 10.3624 13.9724 10.3337 13.95 10.31C13.89 10.26 13.81 10.28 13.74 10.29C13.65 10.31 12.25 11.24 9.52 13.08C9.12 13.35 8.76 13.49 8.44 13.48C8.08 13.47 7.4 13.28 6.89 13.11C6.26 12.91 5.77 12.8 5.81 12.45C5.83 12.27 6.08 12.09 6.55 11.9C9.47 10.63 11.41 9.79 12.38 9.39C15.16 8.23 15.73 8.03 16.11 8.03C16.19 8.03 16.38 8.05 16.5 8.15C16.6 8.23 16.63 8.34 16.64 8.42C16.63 8.48 16.65 8.66 16.64 8.8Z" fill="currentColor"/>
+            </svg>
+        {/if}
+
+        <!-- Текст -->
+        <span class="text-[20rem] lg:text-[22rem] font-onest font-medium">
+            {media}
+        </span>
+
+        <!-- Стрелка -->
+        <svg class="w-[20rem] h-[20rem] opacity-60" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+</a>
+
+<style>
+    a {
+        box-shadow: 0 15rem 40rem rgba(0, 0, 0, 0.05);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    a:hover {
+        box-shadow: 0 20rem 60rem rgba(0, 0, 0, 0.1);
+        transform: translateY(-2rem);
+    }
+
+    @media (hover: none) {
+        a:hover {
+            transform: none;
+        }
+    }
+</style>
