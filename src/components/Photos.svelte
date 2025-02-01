@@ -361,20 +361,20 @@
 {/if}
 
 <!-- Основной контент -->
-<div class="flex flex-col gap-[80rem]">
+<div class="flex flex-col gap-[120rem] lg:gap-[80rem]">
     <!-- Заголовок -->
     <div class="flex items-end justify-between">
         <div class="flex flex-col gap-[15rem]">
-            <h2 class="text-[64rem] lg:text-[72rem] font-bold font-oddval">ОТДЫХ</h2>
-            <p class="text-[28rem] lg:text-[24rem] font-onest opacity-70">Путешествия и впечатления</p>
+            <h2 class="text-[96rem] lg:text-[72rem] font-bold font-oddval">ОТДЫХ</h2>
+            <p class="text-[42rem] lg:text-[24rem] font-onest opacity-70">Путешествия и впечатления</p>
         </div>
     </div>
 
     <!-- Путешествия -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[15rem] lg:gap-[30rem]">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[22rem] lg:gap-[30rem]">
         {#each categories[0].photos as photo}
             <div 
-                class="interactive-element group relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden cursor-pointer rounded-[30rem]"
+                class="interactive-element group relative aspect-square sm:aspect-[3/4] overflow-hidden cursor-pointer rounded-[50rem] sm:rounded-[30rem] lg:rounded-[20rem]"
                 on:click={() => {
                     if (photo.album) {
                         loadAlbumPhotos(photo.album);
@@ -388,18 +388,18 @@
                 <img 
                     src={photo.url} 
                     alt={photo.title}
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-[50rem] sm:rounded-[30rem] lg:rounded-[20rem]"
                 />
                 
                 <!-- Градиентный оверлей -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent rounded-[50rem] sm:rounded-[30rem] lg:rounded-[20rem]" />
                 
                 <!-- Информация -->
-                <div class="absolute inset-x-0 bottom-0 p-[20rem] lg:p-[30rem]">
+                <div class="absolute inset-x-0 bottom-0 p-[30rem] lg:p-[20rem]">
                     <div class="flex flex-col gap-[10rem] text-white">
-                        <h3 class="text-[42rem] lg:text-[28rem] font-bold font-oddval">{photo.title}</h3>
-                        <p class="text-[32rem] lg:text-[18rem] font-onest opacity-90">{photo.description}</p>
-                        <span class="text-[28rem] lg:text-[16rem] font-onest opacity-70">{photo.date}</span>
+                        <h3 class="text-[63rem] lg:text-[28rem] font-bold font-oddval">{photo.title}</h3>
+                        <p class="text-[48rem] lg:text-[18rem] font-onest opacity-90">{photo.description}</p>
+                        <span class="text-[42rem] lg:text-[16rem] font-onest opacity-70">{photo.date}</span>
                     </div>
                     <div class="flex items-center gap-[12rem] lg:gap-[15rem] mt-[15rem]">
                         {#if photo.story}
@@ -407,7 +407,7 @@
                                 <svg class="w-[18rem] lg:w-[16rem] h-[18rem] lg:h-[16rem] text-white" viewBox="0 0 24 24" fill="none">
                                     <path d="M7 7H17M7 12H17M7 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
-                                <span class="text-[24rem] lg:text-[14rem] font-onest text-white">История</span>
+                                <span class="text-[36rem] lg:text-[14rem] font-onest text-white">История</span>
                             </div>
                         {/if}
                     </div>
@@ -417,23 +417,18 @@
     </div>
 
     <!-- Другие фотографии -->
-    {#if categories[1].photos.length > 0}
-        <div class="flex flex-col gap-[30rem] lg:gap-[40rem]">
-            <h3 class="text-[42rem] lg:text-[32rem] font-bold font-oddval opacity-70">Другие фотографии</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[15rem] lg:gap-[20rem]">
-                {#each categories[1].photos as photo}
-                    <div 
-                        class="interactive-element aspect-square overflow-hidden rounded-[15rem] lg:rounded-[20rem]"
-                        on:click={() => photo.album && loadAlbumPhotos(photo.album)}
-                    >
-                        <img 
-                            src={photo.url} 
-                            alt="Photo"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                        />
-                    </div>
-                {/each}
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[22rem] lg:gap-[20rem]">
+        {#each categories[1].photos as photo}
+            <div 
+                class="interactive-element aspect-square overflow-hidden rounded-[30rem] lg:rounded-[20rem]"
+                on:click={() => photo.album && loadAlbumPhotos(photo.album)}
+            >
+                <img 
+                    src={photo.url} 
+                    alt="Photo"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
             </div>
-        </div>
-    {/if}
+        {/each}
+    </div>
 </div> 
