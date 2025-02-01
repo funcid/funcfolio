@@ -34,35 +34,35 @@
 
 <div class="flex flex-col gap-[30rem] lg:gap-[60rem]">
     <!-- Основной контент -->
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-[40rem] lg:gap-[120rem]">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-[60rem] lg:gap-[120rem]">
         <!-- Аватар -->
         <div class="relative shrink-0 order-1 lg:order-2">
-            <div class="w-[450rem] h-[450rem] lg:w-[450rem] lg:h-[450rem] rounded-[30rem] overflow-hidden bg-avatar bg-center bg-cover
-                        shadow-[0_0_0_10rem_rgba(255,255,255,0.5)] lg:shadow-[0_0_0_15rem_rgba(255,255,255,0.5)] hover:shadow-[0_0_0_15rem_rgba(255,255,255,0.6)] lg:hover:shadow-[0_0_0_20rem_rgba(255,255,255,0.6)] transition-shadow" />
+            <div class="w-[500rem] h-[500rem] lg:w-[450rem] lg:h-[450rem] rounded-[30rem] overflow-hidden bg-avatar bg-center bg-cover
+                        shadow-[0_0_0_15rem_rgba(255,255,255,0.5)] lg:shadow-[0_0_0_15rem_rgba(255,255,255,0.5)] hover:shadow-[0_0_0_20rem_rgba(255,255,255,0.6)] lg:hover:shadow-[0_0_0_20rem_rgba(255,255,255,0.6)] transition-shadow" />
             <!-- Возраст -->
-            <div class="absolute -bottom-[20rem] lg:-bottom-[25rem] left-1/2 -translate-x-1/2 bg-white rounded-[30rem] px-[20rem] lg:px-[30rem] py-[10rem] lg:py-[15rem] shadow-lg">
-                <p class="text-[16rem] lg:text-[20rem] font-onest">
+            <div class="absolute -bottom-[25rem] left-1/2 -translate-x-1/2 bg-white rounded-[30rem] px-[25rem] lg:px-[30rem] py-[12rem] lg:py-[15rem] shadow-lg">
+                <p class="text-[22rem] lg:text-[20rem] font-onest">
                     {ageWithWord(age)}
                 </p>
             </div>
         </div>
 
         <!-- Левая часть -->
-        <div class="flex flex-col items-center lg:items-start gap-[30rem] lg:gap-[40rem] order-2 lg:order-1">
+        <div class="flex flex-col items-center lg:items-start gap-[40rem] lg:gap-[40rem] order-2 lg:order-1">
             <!-- Имя и описание -->
-            <div class="flex flex-col items-center lg:items-start gap-[25rem]">
-                <h1 class="text-[42rem] lg:text-[72rem] font-bold font-oddval text-center lg:text-left leading-[1.1]">
+            <div class="flex flex-col items-center lg:items-start gap-[30rem] lg:gap-[25rem]">
+                <h1 class="text-[52rem] lg:text-[72rem] font-bold font-oddval text-center lg:text-left leading-[1.1]">
                     АРТЁМ<br/>ЦАРЮК
                 </h1>
-                <p class="text-[18rem] lg:text-[24rem] font-onest opacity-70 max-w-[600rem] text-center lg:text-left leading-[1.5]">
+                <p class="text-[24rem] lg:text-[24rem] font-onest opacity-70 max-w-[600rem] text-center lg:text-left leading-[1.5]">
                     Разработчик, путешественник и просто хороший человек
                 </p>
             </div>
 
             <!-- Социальные сети и приватный канал -->
-            <div class="flex flex-col gap-[15rem] items-center lg:items-start">
+            <div class="flex flex-col gap-[20rem] items-center lg:items-start">
                 <!-- Социальные сети -->
-                <div class="flex gap-[15rem] lg:gap-[20rem] flex-wrap justify-center lg:justify-start">
+                <div class="flex gap-[20rem] lg:gap-[20rem] flex-wrap justify-center lg:justify-start">
                     <SocialMedia media="VK" link="https://vk.com/funcid" color="--blue"/>
                     <SocialMedia media="TELEGRAM" link="https://t.me/funcid" color="--skyblue"/>
                 </div>
@@ -70,15 +70,15 @@
                 <!-- Кнопка приватного канала -->
                 <button 
                     on:click={handlePrivateChannelRequest}
-                    class="interactive-element group px-[25rem] lg:px-[35rem] h-[70rem] lg:h-[83rem] flex items-center gap-[12rem] lg:gap-[15rem] bg-black text-white overflow-hidden relative rounded-[30rem]"
+                    class="interactive-element group px-[30rem] lg:px-[35rem] h-[80rem] lg:h-[83rem] flex items-center gap-[15rem] lg:gap-[15rem] bg-black text-white overflow-hidden relative rounded-[30rem]"
                 >
                     <div class="absolute inset-0 bg-gradient-to-r from-[--purpur] to-[--pink] opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div class="relative flex items-center gap-[15rem]">
-                        <svg class="w-[22rem] lg:w-[24rem] h-[22rem] lg:h-[24rem] text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-[26rem] lg:w-[24rem] h-[26rem] lg:h-[24rem] text-white" viewBox="0 0 24 24" fill="none">
                             <path d="M19 11H5C3.89543 11 3 11.8954 3 13V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V13C21 11.8954 20.1046 11 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M7 11V7C7 5.67392 7.52678 4.40215 8.46447 3.46447C9.40215 2.52678 10.6739 2 12 2C13.3261 2 14.5979 2.52678 15.5355 3.46447C16.4732 4.40215 17 5.67392 17 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span class="text-[18rem] lg:text-[20rem] font-onest whitespace-nowrap">
+                        <span class="text-[22rem] lg:text-[20rem] font-onest whitespace-nowrap">
                             Приватный канал
                         </span>
                     </div>

@@ -29,25 +29,30 @@
     let albumPhotos: string[] = [];
 
     // Импортируем все фотографии из альбома thailand
-    const thailandPhotos = Object.entries(import.meta.glob('/static/photos/thailand/*', { eager: true }))
+    const thailandPhotos = Object.entries(import.meta.glob('/static/photos/thailand/*.(jpg|jpeg|png|webp)', { eager: true }))
         .map(([path]) => path.replace('/static', ''));
 
     // Импортируем все фотографии из альбома dubai
-    const dubaiPhotos = Object.entries(import.meta.glob('/static/photos/dubai/*', { eager: true }))
+    const dubaiPhotos = Object.entries(import.meta.glob('/static/photos/dubai/*.(jpg|jpeg|png|webp)', { eager: true }))
         .map(([path]) => path.replace('/static', ''));
 
     // Импортируем все фотографии из альбома gelendzhik
-    const gelendzhikPhotos = Object.entries(import.meta.glob('/static/photos/gelendzhik/*', { eager: true }))
+    const gelendzhikPhotos = Object.entries(import.meta.glob('/static/photos/gelendzhik/*.(jpg|jpeg|png|webp)', { eager: true }))
         .map(([path]) => path.replace('/static', ''));
 
     // Импортируем все фотографии из папки other
-    const otherPhotos = Object.entries(import.meta.glob('/static/photos/other/*', { eager: true }))
+    const otherPhotos = Object.entries(import.meta.glob('/static/photos/other/*.(jpg|jpeg|png|webp)', { eager: true }))
+        .map(([path]) => path.replace('/static', ''));
+
+    // Импортируем все фотографии из альбома japan
+    const japanPhotos = Object.entries(import.meta.glob('/static/photos/japan/*.(jpg|jpeg|png|webp)', { eager: true }))
         .map(([path]) => path.replace('/static', ''));
 
     // Выбираем случайные фотографии для обложек
     const coverPhoto = thailandPhotos[Math.floor(Math.random() * thailandPhotos.length)];
     const dubaiCoverPhoto = dubaiPhotos[Math.floor(Math.random() * dubaiPhotos.length)];
     const gelendzhikCoverPhoto = gelendzhikPhotos[Math.floor(Math.random() * gelendzhikPhotos.length)];
+    const japanCoverPhoto = japanPhotos[Math.floor(Math.random() * japanPhotos.length)];
 
     async function loadAlbumPhotos(albumPath: string) {
         if (albumPath === 'thailand') {
@@ -56,6 +61,8 @@
             albumPhotos = dubaiPhotos;
         } else if (albumPath === 'gelendzhik') {
             albumPhotos = gelendzhikPhotos;
+        } else if (albumPath === 'japan') {
+            albumPhotos = japanPhotos;
         } else if (albumPath === 'other') {
             albumPhotos = otherPhotos;
         }
@@ -256,6 +263,44 @@
         ]
     };
 
+    const japanStory = {
+        title: 'Япония',
+        date: '6-20 октября',
+        duration: '14 дней',
+        days: [
+            {
+                title: 'Токио',
+                activities: [
+                    'Район Акихабара',
+                    'Храм Сэнсо-дзи',
+                    'Токийская башня',
+                    'Район Сибуя',
+                    'Парк Уэно'
+                ]
+            },
+            {
+                title: 'Киото',
+                activities: [
+                    'Золотой павильон',
+                    'Храм Киёмидзу-дэра',
+                    'Бамбуковый лес Арасияма',
+                    'Храм Фусими Инари',
+                    'Район гейш Гион'
+                ]
+            },
+            {
+                title: 'Осака',
+                activities: [
+                    'Замок Осаки',
+                    'Район Дотонбори',
+                    'Аквариум Кайюкан',
+                    'Уличная еда',
+                    'Ночная жизнь'
+                ]
+            }
+        ]
+    };
+
     const categories: Category[] = [
         {
             title: "Путешествия",
@@ -283,6 +328,14 @@
                     date: '2024',
                     album: 'dubai',
                     story: dubaiStory
+                },
+                {
+                    url: japanCoverPhoto,
+                    title: 'Япония',
+                    description: '6-20 октября',
+                    date: '2023',
+                    album: 'japan',
+                    story: japanStory
                 }
             ]
         },
@@ -313,7 +366,7 @@
     <div class="flex items-end justify-between">
         <div class="flex flex-col gap-[15rem]">
             <h2 class="text-[64rem] lg:text-[72rem] font-bold font-oddval">ОТДЫХ</h2>
-            <p class="text-[20rem] lg:text-[24rem] font-onest opacity-70">Путешествия и впечатления</p>
+            <p class="text-[28rem] lg:text-[24rem] font-onest opacity-70">Путешествия и впечатления</p>
         </div>
     </div>
 
@@ -343,22 +396,20 @@
                 
                 <!-- Информация -->
                 <div class="absolute inset-x-0 bottom-0 p-[20rem] lg:p-[30rem]">
-                    <div class="flex flex-col gap-[12rem] lg:gap-[15rem] text-white">
-                        <div class="flex flex-col gap-[8rem] lg:gap-[5rem]">
-                            <h3 class="text-[32rem] lg:text-[28rem] font-bold font-oddval">{photo.title}</h3>
-                            <p class="text-[24rem] lg:text-[18rem] font-onest opacity-90">{photo.description}</p>
-                        </div>
-                        <div class="flex items-center gap-[12rem] lg:gap-[15rem]">
-                            <span class="text-[22rem] lg:text-[16rem] font-onest opacity-70">{photo.date}</span>
-                            {#if photo.story}
-                                <div class="flex items-center gap-[10rem] lg:gap-[8rem] px-[15rem] lg:px-[12rem] py-[8rem] lg:py-[6rem] bg-white/10 backdrop-blur-md rounded-full">
-                                    <svg class="w-[18rem] lg:w-[16rem] h-[18rem] lg:h-[16rem] text-white" viewBox="0 0 24 24" fill="none">
-                                        <path d="M7 7H17M7 12H17M7 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                    <span class="text-[20rem] lg:text-[14rem] font-onest">История</span>
-                                </div>
-                            {/if}
-                        </div>
+                    <div class="flex flex-col gap-[10rem] text-white">
+                        <h3 class="text-[42rem] lg:text-[28rem] font-bold font-oddval">{photo.title}</h3>
+                        <p class="text-[32rem] lg:text-[18rem] font-onest opacity-90">{photo.description}</p>
+                        <span class="text-[28rem] lg:text-[16rem] font-onest opacity-70">{photo.date}</span>
+                    </div>
+                    <div class="flex items-center gap-[12rem] lg:gap-[15rem] mt-[15rem]">
+                        {#if photo.story}
+                            <div class="flex items-center gap-[10rem] lg:gap-[8rem] px-[15rem] lg:px-[12rem] py-[8rem] lg:py-[6rem] bg-white/10 backdrop-blur-md rounded-full">
+                                <svg class="w-[18rem] lg:w-[16rem] h-[18rem] lg:h-[16rem] text-white" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 7H17M7 12H17M7 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span class="text-[24rem] lg:text-[14rem] font-onest text-white">История</span>
+                            </div>
+                        {/if}
                     </div>
                 </div>
             </div>
@@ -368,7 +419,7 @@
     <!-- Другие фотографии -->
     {#if categories[1].photos.length > 0}
         <div class="flex flex-col gap-[30rem] lg:gap-[40rem]">
-            <h3 class="text-[28rem] lg:text-[32rem] font-bold font-oddval opacity-70">Другие фотографии</h3>
+            <h3 class="text-[42rem] lg:text-[32rem] font-bold font-oddval opacity-70">Другие фотографии</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[15rem] lg:gap-[20rem]">
                 {#each categories[1].photos as photo}
                     <div 

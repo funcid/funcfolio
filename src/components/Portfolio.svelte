@@ -63,18 +63,15 @@
     <!-- Заголовок -->
     <div class="flex items-end justify-between">
         <div class="flex flex-col gap-[15rem]">
-            <h2 class="text-[48rem] lg:text-[72rem] font-bold font-oddval">РАБОТА</h2>
-            <p class="text-[18rem] lg:text-[24rem] font-onest opacity-70">Опыт: {experience.totalExperience}</p>
+            <h2 class="text-[64rem] lg:text-[72rem] font-bold font-oddval">РАБОТА</h2>
+            <p class="text-[28rem] lg:text-[24rem] font-onest opacity-70">Опыт: {experience.totalExperience}</p>
         </div>
         <a 
             href={experience.resumeUrl}
             target="_blank" 
-            class="interactive-element px-[25rem] lg:px-[30rem] h-[50rem] lg:h-[60rem] flex items-center gap-[12rem] lg:gap-[15rem] bg-black text-white rounded-[30rem]"
+            class="interactive-element px-[30rem] lg:px-[30rem] h-[60rem] lg:h-[60rem] flex items-center gap-[15rem] bg-black text-white rounded-[30rem]"
         >
-            <span class="text-[16rem] lg:text-[18rem] font-onest whitespace-nowrap">Резюме</span>
-            <svg class="w-[16rem] lg:w-[20rem] h-[16rem] lg:h-[20rem]" viewBox="0 0 24 24" fill="none">
-                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <span class="text-[24rem] lg:text-[18rem] font-onest whitespace-nowrap">Резюме</span>
         </a>
     </div>
 
@@ -84,7 +81,7 @@
             <div class="project-item block rounded-[30rem] overflow-hidden bg-white">
                 <div style="background: var({position.color})" class="h-[5rem] lg:h-[7rem]" />
                 
-                <div class="p-[20rem] lg:p-[30rem] flex flex-col gap-[20rem] lg:gap-[25rem]">
+                <div class="p-[25rem] lg:p-[30rem] flex flex-col gap-[25rem] lg:gap-[25rem]">
                     <!-- Логотип и заголовок -->
                     <div class="flex items-center gap-[15rem] lg:gap-[20rem]">
                         <div class="w-[60rem] lg:w-[80rem] h-[60rem] lg:h-[80rem] rounded-[7rem] bg-white shadow-lg p-[12rem] lg:p-[15rem] -mt-[35rem] lg:-mt-[40rem]">
@@ -95,21 +92,21 @@
                             />
                         </div>
                         <div>
-                            <h3 class="text-[24rem] lg:text-[32rem] font-bold font-oddval">{position.company}</h3>
-                            <p class="text-[16rem] lg:text-[20rem] font-onest opacity-80">{position.location}</p>
+                            <h3 class="text-[36rem] lg:text-[32rem] font-bold font-oddval">{position.company}</h3>
+                            <p class="text-[28rem] lg:text-[20rem] font-onest opacity-80">{position.location}</p>
                         </div>
                     </div>
 
                     <!-- Информация -->
                     <div class="flex flex-col gap-[8rem] lg:gap-[10rem]">
-                        <p class="text-[18rem] lg:text-[24rem] font-onest">{position.position}</p>
-                        <p class="text-[16rem] lg:text-[20rem] font-onest opacity-60">{position.period}</p>
+                        <p class="text-[28rem] lg:text-[24rem] font-onest">{position.position}</p>
+                        <p class="text-[26rem] lg:text-[20rem] font-onest opacity-60">{position.period}</p>
                     </div>
 
                     <!-- Навыки -->
                     <div class="flex flex-wrap gap-[8rem] lg:gap-[10rem] pt-[15rem] border-t border-black/5">
                         {#each position.skills as skill}
-                            <span class="px-[12rem] lg:px-[15rem] py-[6rem] lg:py-[8rem] bg-black/5 rounded-[5rem] text-[14rem] lg:text-[16rem] font-onest">
+                            <span class="px-[12rem] lg:px-[15rem] py-[6rem] lg:py-[8rem] bg-black/5 rounded-[5rem] text-[24rem] lg:text-[16rem] font-onest">
                                 {skill}
                             </span>
                         {/each}
@@ -137,7 +134,7 @@
                         <svg class="w-[28rem] lg:w-[32rem] h-[28rem] lg:h-[32rem] text-white" viewBox="0 0 24 24" fill="currentColor">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                         </svg>
-                        <h3 class="text-[28rem] lg:text-[32rem] font-bold font-oddval text-white">GitHub</h3>
+                        <h3 class="text-[36rem] lg:text-[32rem] font-bold font-oddval text-white">GitHub</h3>
                     </div>
                     {#if loading}
                         <p class="text-[20rem] lg:text-[24rem] font-onest text-white/70">Загрузка данных...</p>
