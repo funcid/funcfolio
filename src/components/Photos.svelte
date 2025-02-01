@@ -283,12 +283,6 @@
                     date: '2024',
                     album: 'dubai',
                     story: dubaiStory
-                },
-                {
-                    url: '/photos/japan.jpg',
-                    title: 'Япония',
-                    description: '6-20 октября',
-                    date: '2023'
                 }
             ]
         },
