@@ -2,8 +2,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
 	<meta name="description" content="Funcfolio" />
+	<title>Funcfolio</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="use-credentials"/>
