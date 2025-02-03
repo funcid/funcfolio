@@ -1,5 +1,4 @@
 <script lang="ts">
-    import DotsIcon from '$lib/images/icon/black_dots.svg?raw'
     import { onMount } from 'svelte';
     import TravelStory from './TravelStory.svelte';
 
@@ -28,46 +27,44 @@
     let selectedStory: Photo['story'] | null = null;
     let albumPhotos: string[] = [];
 
-    // Импортируем все фотографии из альбома thailand
-    const thailandPhotos = Object.entries(import.meta.glob('/static/photos/thailand/*.(jpg|jpeg|png|webp)', { eager: true }))
+    // Импорт фотографий для каждого альбома
+    const thailandPhotos = Object.entries(import.meta.glob('/static/photos/thailand/*.webp', { eager: true }))
+        .map(([path]) => path.replace('/static', ''));
+    const dubaiPhotos = Object.entries(import.meta.glob('/static/photos/dubai/*.webp', { eager: true }))
+        .map(([path]) => path.replace('/static', ''));
+    const gelendzhikPhotos = Object.entries(import.meta.glob('/static/photos/gelendzhik/*.webp', { eager: true }))
+        .map(([path]) => path.replace('/static', ''));
+    const japanPhotos = Object.entries(import.meta.glob('/static/photos/japan/*.webp', { eager: true }))
+        .map(([path]) => path.replace('/static', ''));
+    const otherPhotos = Object.entries(import.meta.glob('/static/photos/other/*.webp', { eager: true }))
         .map(([path]) => path.replace('/static', ''));
 
-    // Импортируем все фотографии из альбома dubai
-    const dubaiPhotos = Object.entries(import.meta.glob('/static/photos/dubai/*.(jpg|jpeg|png|webp)', { eager: true }))
-        .map(([path]) => path.replace('/static', ''));
+    const albums = {
+        thailand: thailandPhotos,
+        dubai: dubaiPhotos,
+        gelendzhik: gelendzhikPhotos,
+        japan: japanPhotos,
+        other: otherPhotos
+    };
 
-    // Импортируем все фотографии из альбома gelendzhik
-    const gelendzhikPhotos = Object.entries(import.meta.glob('/static/photos/gelendzhik/*.(jpg|jpeg|png|webp)', { eager: true }))
-        .map(([path]) => path.replace('/static', ''));
+    // Выбор случайной фотографии из альбома
+    const getRandomPhoto = (albumPhotos: string[]) => 
+        albumPhotos[Math.floor(Math.random() * albumPhotos.length)];
 
-    // Импортируем все фотографии из папки other
-    const otherPhotos = Object.entries(import.meta.glob('/static/photos/other/*.(jpg|jpeg|png|webp)', { eager: true }))
-        .map(([path]) => path.replace('/static', ''));
+    // Обложки альбомов
+    const covers = {
+        thailand: getRandomPhoto(albums.thailand),
+        dubai: getRandomPhoto(albums.dubai),
+        gelendzhik: getRandomPhoto(albums.gelendzhik),
+        japan: getRandomPhoto(albums.japan)
+    };
 
-    // Импортируем все фотографии из альбома japan
-    const japanPhotos = Object.entries(import.meta.glob('/static/photos/japan/*.(jpg|jpeg|png|webp)', { eager: true }))
-        .map(([path]) => path.replace('/static', ''));
-
-    // Выбираем случайные фотографии для обложек
-    const coverPhoto = thailandPhotos[Math.floor(Math.random() * thailandPhotos.length)];
-    const dubaiCoverPhoto = dubaiPhotos[Math.floor(Math.random() * dubaiPhotos.length)];
-    const gelendzhikCoverPhoto = gelendzhikPhotos[Math.floor(Math.random() * gelendzhikPhotos.length)];
-    const japanCoverPhoto = japanPhotos[Math.floor(Math.random() * japanPhotos.length)];
-
-    async function loadAlbumPhotos(albumPath: string) {
-        if (albumPath === 'thailand') {
-            albumPhotos = thailandPhotos;
-        } else if (albumPath === 'dubai') {
-            albumPhotos = dubaiPhotos;
-        } else if (albumPath === 'gelendzhik') {
-            albumPhotos = gelendzhikPhotos;
-        } else if (albumPath === 'japan') {
-            albumPhotos = japanPhotos;
-        } else if (albumPath === 'other') {
-            albumPhotos = otherPhotos;
-        }
+    // Загрузка фотографий альбома
+    function loadAlbumPhotos(albumPath: string) {
+        albumPhotos = albums[albumPath as keyof typeof albums] || [];
     }
 
+    // Истории путешествий
     const thailandStory = {
         title: 'Тайланд: Пхукет',
         date: '2-9 января',
@@ -195,7 +192,7 @@
             title: "Путешествия",
             photos: [
                 {
-                    url: coverPhoto,
+                    url: covers.thailand,
                     title: 'Тайланд: Пхукет',
                     description: '2-9 января',
                     date: '2025',
@@ -203,14 +200,14 @@
                     story: thailandStory
                 },
                 {
-                    url: gelendzhikCoverPhoto,
+                    url: covers.gelendzhik,
                     title: 'Геленджик',
                     description: '21-27 июля',
                     date: '2024',
                     album: 'gelendzhik'
                 },
                 {
-                    url: dubaiCoverPhoto,
+                    url: covers.dubai,
                     title: 'ОАЭ: Дубай',
                     description: '10-16 февраля',
                     date: '2024',
@@ -218,7 +215,7 @@
                     story: dubaiStory
                 },
                 {
-                    url: japanCoverPhoto,
+                    url: covers.japan,
                     title: 'Япония',
                     description: '6-20 октября',
                     date: '2023',
@@ -228,7 +225,7 @@
         },
         {
             title: "Другое",
-            photos: otherPhotos.map(photo => ({
+            photos: albums.other.map(photo => ({
                 url: photo,
                 title: 'Фото',
                 description: '',
@@ -243,7 +240,10 @@
     <TravelStory 
         story={selectedStory} 
         photos={albumPhotos}
-        onClose={() => selectedStory = null}
+        onClose={() => {
+            selectedStory = null;
+            albumPhotos = [];
+        }}
     />
 {/if}
 
@@ -261,13 +261,16 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[22rem] lg:gap-[30rem]">
         {#each categories[0].photos as photo}
             <div 
-                class="interactive-element group relative aspect-square sm:aspect-[3/4] overflow-hidden cursor-pointer rounded-[50rem] sm:rounded-[30rem] lg:rounded-[20rem]"
+                class="interactive-element group relative aspect-[3/4] overflow-hidden cursor-pointer rounded-[50rem] sm:rounded-[30rem] lg:rounded-[20rem]"
                 on:click={() => {
                     if (photo.album) {
                         loadAlbumPhotos(photo.album);
-                    }
-                    if (photo.story) {
-                        selectedStory = photo.story;
+                        selectedStory = {
+                            title: photo.title,
+                            date: photo.description,
+                            duration: '',
+                            days: photo.story?.days || []
+                        };
                     }
                 }}
             >
@@ -275,11 +278,12 @@
                 <img 
                     src={photo.url} 
                     alt={photo.title}
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-[50rem] sm:rounded-[30rem] lg:rounded-[20rem]"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="eager"
                 />
                 
                 <!-- Градиентный оверлей -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent rounded-[50rem] sm:rounded-[30rem] lg:rounded-[20rem]" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                 
                 <!-- Информация -->
                 <div class="absolute inset-x-0 bottom-0 p-[30rem] lg:p-[20rem]">
@@ -288,16 +292,14 @@
                         <p class="text-[48rem] lg:text-[18rem] font-onest opacity-90">{photo.description}</p>
                         <span class="text-[42rem] lg:text-[16rem] font-onest opacity-70">{photo.date}</span>
                     </div>
-                    <div class="flex items-center gap-[12rem] lg:gap-[15rem] mt-[15rem]">
-                        {#if photo.story}
-                            <div class="flex items-center gap-[10rem] lg:gap-[8rem] px-[15rem] lg:px-[12rem] py-[8rem] lg:py-[6rem] bg-white/10 backdrop-blur-md rounded-full">
-                                <svg class="w-[18rem] lg:w-[16rem] h-[18rem] lg:h-[16rem] text-white" viewBox="0 0 24 24" fill="none">
-                                    <path d="M7 7H17M7 12H17M7 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                                <span class="text-[36rem] lg:text-[14rem] font-onest text-white">История</span>
-                            </div>
-                        {/if}
-                    </div>
+                    {#if photo.story}
+                        <div class="flex items-center gap-[10rem] lg:gap-[8rem] px-[15rem] lg:px-[12rem] py-[8rem] lg:py-[6rem] bg-white/10 backdrop-blur-md rounded-full mt-[15rem]">
+                            <svg class="w-[18rem] lg:w-[16rem] h-[18rem] lg:h-[16rem] text-white" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 7H17M7 12H17M7 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span class="text-[36rem] lg:text-[14rem] font-onest text-white">История</span>
+                        </div>
+                    {/if}
                 </div>
             </div>
         {/each}
@@ -314,6 +316,7 @@
                     src={photo.url} 
                     alt="Photo"
                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    loading="eager"
                 />
             </div>
         {/each}

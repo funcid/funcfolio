@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import DotsIcon from "$lib/images/icon/black_dots.svg?raw";
     import MtsImage from '$lib/images/job/mts.png'
     import SberImage from '$lib/images/job/sber.png'
@@ -9,6 +9,22 @@
     let followers = 0;
     let avatarUrl = '';
     let loading = true;
+
+    function getWordEnding(number: number, words: [string, string, string]): string {
+        const cases = [2, 0, 1, 1, 1, 2];
+        return words[
+            (number % 100 > 4 && number % 100 < 20) ? 2 : 
+            cases[(number % 10 < 5) ? number % 10 : 5]
+        ];
+    }
+
+    function formatRepos(count: number): string {
+        return `${count} ${getWordEnding(count, ['репозиторий', 'репозитория', 'репозиториев'])}`;
+    }
+
+    function formatFollowers(count: number): string {
+        return `${count} ${getWordEnding(count, ['подписчик', 'подписчика', 'подписчиков'])}`;
+    }
 
     const experience = {
         positions: [
@@ -81,10 +97,10 @@
                 </div>
                 <div class="flex gap-[30rem] lg:gap-[30rem]">
                     <p class="text-[42rem] lg:text-[24rem] font-onest text-white/90">
-                        {publicRepos} репозиториев
+                        {formatRepos(publicRepos)}
                     </p>
                     <p class="text-[42rem] lg:text-[24rem] font-onest text-white/90">
-                        {followers} подписчиков
+                        {formatFollowers(followers)}
                     </p>
                 </div>
             </div>
