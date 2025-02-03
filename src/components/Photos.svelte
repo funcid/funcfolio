@@ -261,7 +261,18 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[22rem] lg:gap-[30rem]">
         {#each categories[0].photos as photo}
             <div 
-                class="interactive-element group relative aspect-[3/4] rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
+                class="interactive-element group relative aspect-[3/4] cursor-pointer rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
+                on:click={() => {
+                    if (photo.album) {
+                        loadAlbumPhotos(photo.album);
+                        selectedStory = {
+                            title: photo.title,
+                            date: photo.description,
+                            duration: '',
+                            days: photo.story?.days || []
+                        };
+                    }
+                }}
             >
                 <!-- Фото -->
                 <img 
@@ -298,13 +309,12 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[22rem] lg:gap-[20rem]">
         {#each categories[1].photos as photo}
             <div 
-                class="interactive-element aspect-square cursor-pointer rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
-                on:click={() => photo.album && loadAlbumPhotos(photo.album)}
+                class="interactive-element aspect-square rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
             >
                 <img 
                     src={photo.url} 
                     alt="Photo"
-                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    class="w-full h-full object-cover select-none pointer-events-none"
                     loading="eager"
                 />
             </div>

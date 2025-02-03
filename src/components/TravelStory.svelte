@@ -15,23 +15,13 @@
     export let onClose: () => void;
 
     let loadedImages: Set<string> = new Set();
-    let selectedImage: string | null = null;
     let isPhotoOnly = !story.days || story.days.length === 0;
 
     function handleImageLoad(photo: string) {
         loadedImages = loadedImages.add(photo);
     }
 
-    function handleImageClick(photo: string) {
-        selectedImage = photo;
-    }
-
-    function closeFullscreen() {
-        selectedImage = null;
-    }
-
     onMount(() => {
-        // Предзагрузка всех фотографий
         photos.forEach(photo => {
             const img = new Image();
             img.src = photo;
@@ -69,17 +59,14 @@
                 {#if photos.length > 0}
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[15rem] lg:gap-[20rem] {isPhotoOnly ? 'mt-0' : ''}">
                         {#each photos as photo}
-                            <div 
-                                class="aspect-square rounded-[30rem] overflow-hidden cursor-pointer relative"
-                                on:click={() => handleImageClick(photo)}
-                            >
+                            <div class="aspect-square rounded-[30rem] overflow-hidden">
                                 {#if !loadedImages.has(photo)}
                                     <SkeletonLoader height="100%" borderRadius="30rem" />
                                 {/if}
                                 <img 
                                     src={photo} 
                                     alt="Travel photo"
-                                    class="w-full h-full object-cover transition-all duration-500 hover:scale-110"
+                                    class="w-full h-full object-cover select-none pointer-events-none"
                                     class:opacity-0={!loadedImages.has(photo)}
                                     loading="eager"
                                 />
@@ -125,28 +112,7 @@
     </div>
 </div>
 
-<!-- Полноэкранный просмотр фото -->
-{#if selectedImage}
-    <div 
-        class="fixed inset-0 z-[60] bg-black/95 backdrop-blur-md flex items-center justify-center cursor-pointer"
-        on:click={closeFullscreen}
-    >
-        <img 
-            src={selectedImage} 
-            alt="Full screen photo"
-            class="max-w-[90%] max-h-[90vh] object-contain"
-            loading="eager"
-        />
-    </div>
-{/if}
-
 <style>
-    /* Удаляем блокировку прокрутки */
-    /* :global(body) {
-        overflow: hidden;
-    } */
-
-    /* Добавляем анимацию появления */
     @keyframes fade-in {
         from {
             opacity: 0;
@@ -162,7 +128,6 @@
         animation: fade-in 0.3s ease-out forwards;
     }
 
-    /* Стилизация скроллбара */
     ::-webkit-scrollbar {
         width: 8rem;
     }
@@ -178,13 +143,5 @@
 
     ::-webkit-scrollbar-thumb:hover {
         background: #D1D5DB;
-    }
-
-    img {
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .opacity-0 {
-        opacity: 0;
     }
 </style> 
