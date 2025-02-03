@@ -88,7 +88,7 @@
 
             <!-- WhatsApp -->
             <a 
-                href="https://wa.me/79776161672" 
+                href="https://wa.me/79031346306" 
                 target="_blank"
                 rel="noreferrer noopener"
                 class="social-link flex items-center gap-[25rem] lg:gap-[10rem] px-[55rem] lg:px-[25rem] h-[130rem] lg:h-[60rem] rounded-[45rem] lg:rounded-[20rem] bg-[#25D366] text-white"
