@@ -31,12 +31,12 @@
 			<!-- Секции -->
 			<div class="flex flex-col gap-[80rem] lg:gap-[150rem]">
 				<!-- Работа -->
-				<div class="bg-white/70 backdrop-blur-md rounded-[30rem] lg:rounded-[50rem] p-[30rem] lg:p-[80rem] shadow-[0_20rem_60rem_rgba(0,0,0,0.03)]">
+				<div class="bg-white/70 backdrop-blur-md rounded-[60rem] lg:rounded-[50rem] p-[30rem] lg:p-[80rem] shadow-[0_20rem_60rem_rgba(0,0,0,0.03)]">
 					<Portfolio />
 				</div>
 
 				<!-- Отдых -->
-				<div class="bg-white/70 backdrop-blur-md rounded-[30rem] lg:rounded-[50rem] p-[30rem] lg:p-[80rem] shadow-[0_20rem_60rem_rgba(0,0,0,0.03)]">
+				<div class="bg-white/70 backdrop-blur-md rounded-[60rem] lg:rounded-[50rem] p-[30rem] lg:p-[80rem] shadow-[0_20rem_60rem_rgba(0,0,0,0.03)]">
 					<Photos />
 				</div>
 			</div>

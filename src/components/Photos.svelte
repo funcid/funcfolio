@@ -261,7 +261,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[22rem] lg:gap-[30rem]">
         {#each categories[0].photos as photo}
             <div 
-                class="interactive-element group relative aspect-[3/4] overflow-hidden cursor-pointer rounded-[50rem] sm:rounded-[30rem] lg:rounded-[20rem]"
+                class="interactive-element group relative aspect-[3/4] overflow-hidden cursor-pointer rounded-[60rem] lg:rounded-[30rem]"
                 on:click={() => {
                     if (photo.album) {
                         loadAlbumPhotos(photo.album);
@@ -278,12 +278,12 @@
                 <img 
                     src={photo.url} 
                     alt={photo.title}
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-[60rem] lg:rounded-[30rem]"
                     loading="eager"
                 />
                 
                 <!-- Градиентный оверлей -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent rounded-[60rem] lg:rounded-[30rem]" />
                 
                 <!-- Информация -->
                 <div class="absolute inset-x-0 bottom-0 p-[30rem] lg:p-[20rem]">
@@ -309,13 +309,13 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[22rem] lg:gap-[20rem]">
         {#each categories[1].photos as photo}
             <div 
-                class="interactive-element aspect-square overflow-hidden rounded-[30rem] lg:rounded-[20rem]"
+                class="interactive-element aspect-square overflow-hidden rounded-[60rem] lg:rounded-[30rem]"
                 on:click={() => photo.album && loadAlbumPhotos(photo.album)}
             >
                 <img 
                     src={photo.url} 
                     alt="Photo"
-                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 rounded-[60rem] lg:rounded-[30rem]"
                     loading="eager"
                 />
             </div>
