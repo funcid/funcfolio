@@ -261,29 +261,19 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[22rem] lg:gap-[30rem]">
         {#each categories[0].photos as photo}
             <div 
-                class="interactive-element group relative aspect-[3/4] cursor-pointer rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
-                on:click={() => {
-                    if (photo.album) {
-                        loadAlbumPhotos(photo.album);
-                        selectedStory = {
-                            title: photo.title,
-                            date: photo.description,
-                            duration: '',
-                            days: photo.story?.days || []
-                        };
-                    }
-                }}
+                class="interactive-element group relative aspect-[3/4] rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
             >
                 <!-- Фото -->
                 <img 
                     src={photo.url} 
                     alt={photo.title}
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110  rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
                     loading="eager"
                 />
                 
                 <!-- Градиентный оверлей -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] pointer-events-none" />
+
                 <!-- Информация -->
                 <div class="absolute inset-0 flex flex-col justify-end p-[30rem] lg:p-[20rem] rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden">
                     <div class="flex flex-col gap-[10rem] text-white">
