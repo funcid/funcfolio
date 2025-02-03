@@ -261,7 +261,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[22rem] lg:gap-[30rem]">
         {#each categories[0].photos as photo}
             <div 
-                class="interactive-element group relative aspect-[3/4] overflow-hidden cursor-pointer rounded-[60rem] lg:rounded-[30rem]"
+                class="interactive-element group relative aspect-[3/4] cursor-pointer rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
                 on:click={() => {
                     if (photo.album) {
                         loadAlbumPhotos(photo.album);
@@ -278,15 +278,14 @@
                 <img 
                     src={photo.url} 
                     alt={photo.title}
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-[60rem] lg:rounded-[30rem]"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110  rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
                     loading="eager"
                 />
                 
                 <!-- Градиентный оверлей -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent rounded-[60rem] lg:rounded-[30rem]" />
-                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] pointer-events-none" />
                 <!-- Информация -->
-                <div class="absolute inset-x-0 bottom-0 p-[30rem] lg:p-[20rem]">
+                <div class="absolute inset-0 flex flex-col justify-end p-[30rem] lg:p-[20rem] rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden">
                     <div class="flex flex-col gap-[10rem] text-white">
                         <h3 class="text-[63rem] lg:text-[28rem] font-bold font-oddval">{photo.title}</h3>
                         <p class="text-[48rem] lg:text-[18rem] font-onest opacity-90">{photo.description}</p>
@@ -309,13 +308,13 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[22rem] lg:gap-[20rem]">
         {#each categories[1].photos as photo}
             <div 
-                class="interactive-element aspect-square overflow-hidden rounded-[60rem] lg:rounded-[30rem]"
+                class="interactive-element aspect-square cursor-pointer rounded-[60rem] sm:rounded-[45rem] lg:rounded-[30rem] overflow-hidden"
                 on:click={() => photo.album && loadAlbumPhotos(photo.album)}
             >
                 <img 
                     src={photo.url} 
                     alt="Photo"
-                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 rounded-[60rem] lg:rounded-[30rem]"
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     loading="eager"
                 />
             </div>
